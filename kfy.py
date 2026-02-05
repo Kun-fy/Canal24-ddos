@@ -1,3 +1,4 @@
+import os
 import threading
 import random
 import sys
@@ -13,6 +14,12 @@ from concurrent.futures import ThreadPoolExecutor
 from typing import Optional, List, Tuple, Dict, NamedTuple
 from urllib.parse import urlparse, ParseResult
 import socks
+
+os.system("clear")
+print("""
+#####
+#####
+""")
 
 CONNECT_TIMEOUT = 10
 READ_WRITE_TIMEOUT = 15
