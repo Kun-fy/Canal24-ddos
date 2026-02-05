@@ -452,19 +452,19 @@ def main():
                         choices=['http', 'https', 'socks4', 'socks5', 'direct'], help='Proxy type')
     parser.add_argument('--proxy-file', type=str, default=None,
                         help='File containing proxies (host:port). Required if --proxy-type is not direct.')
-    parser.add_argument('--user-agents', type=str, default=DEFAULT_USER_AGENTS_FILE,
+    parser.add_argument('--user-agents', type=str, default=default_user_agents_file,
                         help='File containing User-Agent strings')
-    parser.add_argument('--connect-timeout', type=int, default=CONNECT_TIMEOUT,
+    parser.add_argument('--connect-timeout', type=int, default=connect_timeout,
                         help='Connection establishment timeout (seconds)')
-    parser.add_argument('--rw-timeout', type=int, default=READ_WRITE_TIMEOUT,
+    parser.add_argument('--rw-timeout', type=int, default=read_write_timeout,
                         help='Socket read/write operations timeout (seconds)')
-    parser.add_argument('--reqs-per-conn', type=int, default=REQUESTS_PER_CONNECTION,
+    parser.add_argument('--reqs-per-conn', type=int, default=requests_per_connection,
                         help='Max requests per keep-alive connection')
-    parser.add_argument('--stats-interval', type=int, default=STATS_INTERVAL,
+    parser.add_argument('--stats-interval', type=int, default=stats_interval,
                         help='Interval for printing stats (seconds)')
-    parser.add_argument('--inter-request-sleep', type=float, default=INTER_REQUEST_SLEEP,
+    parser.add_argument('--inter-request-sleep', type=float, default=inter_request_sleep,
                         help='Sleep time between requests on same connection (seconds, 0 to yield only)')
-    parser.add_argument('--fail-sleep', type=float, default=FAIL_SLEEP,
+    parser.add_argument('--fail-sleep', type=float, default=fail_sleep,
                         help='Sleep time after a connection failure (seconds)')
     args = parser.parse_args()
 
