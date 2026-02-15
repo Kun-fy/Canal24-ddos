@@ -357,12 +357,11 @@ class ThreadedFlooder:
                  mb_sent = current_bytes/(1024 * 1024)
                  mbps = (mb_sent * 8)/elapsed_total if elapsed_total > 0 else 0
                  logger.info(
-                    f"\033[38;5;220mStats: Time={elapsed_total:.1f}s |\033[0m"
-                    f"\033[32mReq={current_req_count}|\033[0m"
-                    f"\033[38;5;206mSuccess={current_success}({success_rate:.1f}%)|\033[0m"
-                    f"\033[31mErrors={current_errors}({error_rate:.1f}%)[ConnErrs={current_conn_err}]|\033[0m"
-                    f"RPS={rps_interval:.2f} (avg: {rps_total:.2f})|"
-                    f"Sent={mb_sent:.2f} MB ({mbps:.2f} Mbps)"
+                    f"\033[38;5;220mStats: Time={elapsed_total:.1f}s |Req={current_req_count}|\r")
+                    f"\033[38;5;206mSuccess={current_success}({success_rate:.1f}%)|\r")
+                    f"\033[32mErrors={current_errors}({error_rate:.1f}%)[ConnErrs={current_conn_err}]|\r")
+                    f"\033[37mRPS={rps_interval:.2f} (avg: {rps_total:.2f})|\r")
+                    f"\033[38;5;37mSent={mb_sent:.2f} MB ({mbps:.2f} Mbps)\r")
                  )
                  last_req_count = current_req_count
                  last_time = now
