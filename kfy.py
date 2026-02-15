@@ -15,6 +15,7 @@ from typing import Optional, List, Tuple, Dict, NamedTuple
 from urllib.parse import urlparse, ParseResult
 import socks
 
+attemps = 0
 os.system("clear")
 print("""
 #####
@@ -361,7 +362,7 @@ class ThreadedFlooder:
                  logger.info(
                     f"\033[38;5;206mSuccess={current_success} \033[37m({success_rate:.1f}%)\033[0m")
                  logger.info(
-                    f"\033[32mErrors={current_errors}({error_rate:.1f}%) \033[37m[ConnErrs={current_conn_err}]\033[0m")
+                    f"\033[32mErrors={current_errors}({error_rate:.1f}%) \033[37mConnErrs={current_conn_err}\033[0m")
                  logger.info(
                     f"\033[37mRPS={rps_interval:.2f} \033[37m(avg: {rps_total:.2f})\033[0m")
                  logger.info(
