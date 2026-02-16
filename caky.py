@@ -1,9 +1,6 @@
 import os
 import threading
 import random
-import fade
-import virus
-import bot
 import sys
 import string
 import ssl
